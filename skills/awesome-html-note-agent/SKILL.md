@@ -20,9 +20,9 @@ description: "将一个主题或现有内容做成交互式单文件 HTML 笔记
 - 根据巡检建议继续迭代页面；
 - 希望复用当前仓库的生成 + 巡检 + 修改方法论。
 
-## 核心仓库约定
+## Skill 内置文件
 
-如果当前工作区存在以下文件，必须优先读取并遵循：
+本 skill 自带以下必需文件，执行时必须优先读取这些**随 skill 一起分发的本地文件**：
 
 - `readme.md`
 - `01-one-sentence-prompt.md`
@@ -30,12 +30,16 @@ description: "将一个主题或现有内容做成交互式单文件 HTML 笔记
 - `03-upgrade-and-summary-prompt.md`
 - `experiences.md`
 
+这些文件是此 skill 工作流的一部分，不是可有可无的参考资料。
+
+只有当用户当前工作区里也存在同名文件，并且明确希望覆盖 skill 默认行为时，才把工作区文件视为补充上下文；否则以 skill 目录内自带文件为准。
+
 其中：
 
 - `01-one-sentence-prompt.md` 负责“生成 HTML 笔记”的规范；
 - `02-auto-suggestions-prompt.md` 负责“Playwright 巡检”的规范；
 - `03-upgrade-and-summary-prompt.md` 负责“根据建议迭代修改”的规范；
-- `experiences.md` 是经验库，若存在，必须先吸收再执行。
+- `experiences.md` 是经验库，必须先吸收再执行。
 
 ## 目标产物
 
@@ -62,7 +66,7 @@ description: "将一个主题或现有内容做成交互式单文件 HTML 笔记
 
 当用户给出一个主题，要求“做成 HTML 笔记”时：
 
-1. 阅读 `readme.md`、`01-one-sentence-prompt.md`，若存在 `experiences.md` 也必须阅读。
+1. 先阅读 skill 自带的 `readme.md`、`01-one-sentence-prompt.md`、`experiences.md`。
 2. 创建一个专门的「HTML 笔记生成子 agent」来完成实现，不要在主会话把生成、修改、验证混在一起。
 3. 子 agent 需要：
    - 直接创建或修改 HTML 文件；
@@ -74,7 +78,7 @@ description: "将一个主题或现有内容做成交互式单文件 HTML 笔记
 
 当用户说“检查一下页面”“帮我找问题”“继续检查两轮”之类时：
 
-1. 阅读 `02-auto-suggestions-prompt.md`。
+1. 先阅读 skill 自带的 `02-auto-suggestions-prompt.md`。
 2. 使用 Playwright 做真实浏览器巡检；优先桌面端 + 移动端双端检查。
 3. 至少覆盖以下维度中的 5 类：
    - 视觉排版与信息层级；
@@ -91,7 +95,7 @@ description: "将一个主题或现有内容做成交互式单文件 HTML 笔记
 
 当用户说“根据建议修改”“继续改”“修一下公式问题”之类时：
 
-1. 阅读 `03-upgrade-and-summary-prompt.md` 和 `experiences.md`。
+1. 先阅读 skill 自带的 `03-upgrade-and-summary-prompt.md` 和 `experiences.md`。
 2. 根据已知建议修改 HTML 页面，优先解决高影响问题。
 3. 修改后必须做基础验证：
    - 页面可正常打开；
@@ -104,7 +108,7 @@ description: "将一个主题或现有内容做成交互式单文件 HTML 笔记
 
 ## 强制工作方式
 
-- **优先复用仓库现有规范**，不要脱离 `01/02/03/experiences` 自创流程。
+- **优先复用 skill 自带规范**，不要脱离 `readme + 01/02/03/experiences` 自创流程。
 - **优先创建子 agent** 处理生成、巡检、迭代等阶段性任务。
 - **不要只停留在分析**；如果用户方向明确，应直接推进到实现、验证、打开预览。
 - **优先编辑已有 HTML 文件**；只有在没有现成页面时才创建新文件。
