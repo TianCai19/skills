@@ -1,0 +1,32 @@
+{
+  "name": "TianCai19-skills",
+  "owner": {
+    "name": "TianCai19",
+    "email": "TianCai19@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "Personal skills marketplace including HTML note workflows and curated reference skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "html-note-skills",
+      "description": "Interactive HTML note workflow skills for generation, review, and iteration",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/awesome-html-note-agent"
+      ]
+    },
+    {
+      "name": "reference-skills",
+      "description": "Curated reference skills copied for structure and quality alignment",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/frontend-design",
+        "./skills/internal-comms"
+      ]
+    }
+  ]
+}

@@ -36,23 +36,24 @@ Copied third-party skill content remains subject to its original license terms. 
 
 ## Claude Code
 
-If your Claude client supports plugin marketplaces or remote skill repositories, register **this** repository instead of the upstream demo repository.
+This repository is now structured as a Claude Code marketplace repository, including `.claude-plugin/marketplace.json`.
+
+Register **this** repository with Claude Code via:
 
 ```text
 /plugin marketplace add TianCai19/skills
 ```
 
-Then install the skill set you want from the marketplace UI or your client’s repository installation flow.
+Then install one of the plugin groups defined by this repository.
 
-For example, after adding this repository, install and use the skills that live under this repo such as:
+For example:
 
 ```text
-/plugin install awesome-html-note-agent@TianCai19-skills
-/plugin install frontend-design@TianCai19-skills
-/plugin install internal-comms@TianCai19-skills
+/plugin install html-note-skills@TianCai19-skills
+/plugin install reference-skills@TianCai19-skills
 ```
 
-If your client uses a slightly different naming rule for installed repository namespaces, keep the repository path `TianCai19/skills` as the authoritative source and adjust the install command format accordingly.
+After that, you can invoke the skills by name in Claude Code. For example, once `html-note-skills` is installed, you can ask for `awesome-html-note-agent` directly.
 
 ## Claude.ai
 
