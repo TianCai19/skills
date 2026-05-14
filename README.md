@@ -32,7 +32,34 @@ Copied third-party skill content remains subject to its original license terms. 
 - [./spec](./spec): The Agent Skills specification pointer
 - [./template](./template): Basic skill template
 
-# Install and Use
+# Try in Claude Code, Claude.ai, and the API
+
+## Claude Code
+
+If your Claude client supports plugin marketplaces or remote skill repositories, keep the upstream-style installation flow in mind.
+
+For example, the original `anthropics/skills` repository can be registered in Claude Code via:
+
+```text
+/plugin marketplace add anthropics/skills
+```
+
+Then install a plugin / skill set from the marketplace UI, or install directly with commands such as:
+
+```text
+/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills
+```
+
+For this personal repository, if your environment supports repository-based skill installation, use the equivalent repository registration flow supported by your client.
+
+## Claude.ai
+
+If your Claude.ai environment supports custom skills, upload the desired skill folder and follow the standard skill import flow in the product.
+
+## Claude API
+
+If your API environment supports hosted or uploaded skills, use the corresponding skill creation / upload workflow and treat each skill folder here as the source material.
 
 ## Local installation
 
@@ -66,10 +93,6 @@ For example, to install the copied `frontend-design` skill locally:
 mkdir -p ~/.trae/skills
 cp -R ./skills/frontend-design ~/.trae/skills/
 ```
-
-## Claude.ai / API
-
-If your client supports importing custom skills, upload the desired skill folder or use the contents of `SKILL.md` as the basis for your hosted skill definition.
 
 # Creating a Basic Skill
 
