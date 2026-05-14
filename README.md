@@ -36,22 +36,23 @@ Copied third-party skill content remains subject to its original license terms. 
 
 ## Claude Code
 
-If your Claude client supports plugin marketplaces or remote skill repositories, keep the upstream-style installation flow in mind.
-
-For example, the original `anthropics/skills` repository can be registered in Claude Code via:
+If your Claude client supports plugin marketplaces or remote skill repositories, register **this** repository instead of the upstream demo repository.
 
 ```text
-/plugin marketplace add anthropics/skills
+/plugin marketplace add TianCai19/skills
 ```
 
-Then install a plugin / skill set from the marketplace UI, or install directly with commands such as:
+Then install the skill set you want from the marketplace UI or your client’s repository installation flow.
+
+For example, after adding this repository, install and use the skills that live under this repo such as:
 
 ```text
-/plugin install document-skills@anthropic-agent-skills
-/plugin install example-skills@anthropic-agent-skills
+/plugin install awesome-html-note-agent@TianCai19-skills
+/plugin install frontend-design@TianCai19-skills
+/plugin install internal-comms@TianCai19-skills
 ```
 
-For this personal repository, if your environment supports repository-based skill installation, use the equivalent repository registration flow supported by your client.
+If your client uses a slightly different naming rule for installed repository namespaces, keep the repository path `TianCai19/skills` as the authoritative source and adjust the install command format accordingly.
 
 ## Claude.ai
 
