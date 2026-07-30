@@ -10,6 +10,15 @@
   },
   "plugins": [
     {
+      "name": "image-note-skills",
+      "description": "Skills for generating stylized AI image notes and study-card visuals",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/ai-note-image-rainbow-fun"
+      ]
+    },
+    {
       "name": "html-note-skills",
       "description": "Interactive HTML note workflow skills for generation, review, and iteration",
       "source": "./",

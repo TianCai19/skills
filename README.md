@@ -16,6 +16,7 @@ Each skill is self-contained in its own folder with a `SKILL.md` file containing
 
 Currently included:
 
+- `skills/ai-note-image-rainbow-fun` — my Chinese-first skill for generating colorful handwritten study-note images with a consistent multi-pen notebook style.
 - `skills/awesome-html-note-agent` — my custom workflow for turning a topic into an interactive single-file HTML note, then iterating through Playwright review and refinement.
 - `skills/frontend-design` — copied from `anthropics/skills` as a reference skill.
 - `skills/internal-comms` — copied from `anthropics/skills` as a reference skill, including examples.
@@ -49,11 +50,12 @@ Then install one of the plugin groups defined by this repository.
 For example:
 
 ```text
+/plugin install image-note-skills@TianCai19-skills
 /plugin install html-note-skills@TianCai19-skills
 /plugin install reference-skills@TianCai19-skills
 ```
 
-After that, you can invoke the skills by name in Claude Code. For example, once `html-note-skills` is installed, you can ask for `awesome-html-note-agent` directly.
+After that, you can invoke the skills by name in Claude Code. For example, once `image-note-skills` is installed, you can ask for `ai-note-image-rainbow-fun` directly; once `html-note-skills` is installed, you can ask for `awesome-html-note-agent`.
 
 ## Claude.ai
 
